@@ -7,6 +7,7 @@ services:
     environment:
       ASPNETCORE_URLS: http://0.0.0.0:8080
       ASPNETCORE_ENVIRONMENT: Development
+      ConnectionStrings__Default: Host=db;Port=5432;Database=db;Username=user;Password=pass
     ports:
       - 8080:8080
     restart: unless-stopped
@@ -18,3 +19,17 @@ services:
     ports:
       - 4200:8080
     restart: unless-stopped
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: db
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

@@ -1,4 +1,4 @@
-@Quarky_HostAddress = http://localhost:5089
+@Quarky_HostAddress = http://localhost:8080
 
 GET {{Quarky_HostAddress}}/weatherforecast/
 Accept: application/json

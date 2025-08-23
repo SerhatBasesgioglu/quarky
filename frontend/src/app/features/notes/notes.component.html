@@ -1,0 +1,35 @@
+<div class="flex">
+  <div class="w-1/4">
+    <h3 class="underline m-2">Notes</h3>
+    <ul>
+      <li *ngFor="let note of notes" (click)="select(note.id)">
+        {{ note.title }}
+        <span *ngIf="note.hasChanged">+</span>
+        <p-button
+          (onClick)="delete(note.id)"
+          label="delete"
+          severity="danger" />
+      </li>
+    </ul>
+  </div>
+
+  <div class="flex-1">
+    <div *ngIf="selectedNote" class="flex flex-col gap-3">
+      <input
+        pInputText
+        placeholder="Title"
+        [(ngModel)]="selectedNote.title"
+        (ngModelChange)="selectedNote.hasChanged = true" />
+
+      <textarea
+        pTextarea
+        [(ngModel)]="selectedNote.content"
+        (ngModelChange)="selectedNote.hasChanged = true"
+        [autoResize]="true"
+        placeholder="content"></textarea>
+    </div>
+
+    <p-button (onClick)="createTemplate()" label="New" severity="info" />
+    <p-button (onClick)="save()" label="Save" severity="success" />
+  </div>
+</div>
