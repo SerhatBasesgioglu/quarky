@@ -26,13 +26,13 @@ public class NotesController : ControllerBase
         var note = await _context.Notes.FindAsync(id);
         if (note == null)
             return NotFound();
-
         return note;
     }
 
     [HttpPost]
     public async Task<ActionResult<Note>> CreateNote(Note note)
     {
+        note.Id = 0;
         _context.Notes.Add(note);
         await _context.SaveChangesAsync();
 
