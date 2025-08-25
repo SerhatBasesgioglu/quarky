@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using Quarky;
@@ -11,9 +12,11 @@ using Quarky;
 namespace Quarky.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250824072449_AddConceptsTable")]
+    partial class AddConceptsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,21 +24,6 @@ namespace Quarky.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
-
-            modelBuilder.Entity("ConceptConcept", b =>
-                {
-                    b.Property<int>("ConceptId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("DependenciesId")
-                        .HasColumnType("integer");
-
-                    b.HasKey("ConceptId", "DependenciesId");
-
-                    b.HasIndex("DependenciesId");
-
-                    b.ToTable("ConceptDependencies", (string)null);
-                });
 
             modelBuilder.Entity("Quarky.Concept", b =>
                 {
@@ -45,9 +33,6 @@ namespace Quarky.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
 
-                    b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
@@ -55,9 +40,6 @@ namespace Quarky.Migrations
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
-
-                    b.Property<DateTime>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("Id");
 
@@ -86,21 +68,6 @@ namespace Quarky.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Notes");
-                });
-
-            modelBuilder.Entity("ConceptConcept", b =>
-                {
-                    b.HasOne("Quarky.Concept", null)
-                        .WithMany()
-                        .HasForeignKey("ConceptId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("Quarky.Concept", null)
-                        .WithMany()
-                        .HasForeignKey("DependenciesId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

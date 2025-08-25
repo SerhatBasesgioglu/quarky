@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-import { Note } from '../../shared/models/note.model';
+import { Note } from '@models/note.model';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -37,7 +37,6 @@ export class NotesComponent {
     });
   }
   save() {
-    console.log(this.notes);
     const updatedNotes = this.notes.filter(n => {
       return n.id > 0 && n.hasChanged;
     });
@@ -48,7 +47,6 @@ export class NotesComponent {
     });
 
     const newNotes = this.notes.filter(n => n.id < 0 && n.hasChanged);
-    console.log(newNotes);
     newNotes.forEach(note => {
       this.http.post<void>(this.apiUrl, note).subscribe(() => {
         note.hasChanged = false;
@@ -58,7 +56,6 @@ export class NotesComponent {
 
   delete(id: number) {
     if (id < 0) {
-      console.log(id);
       this.notes = this.notes.filter(note => note.id !== id);
     } else {
       this.http.delete<void>(`${this.apiUrl}/${id}`).subscribe(() => {
@@ -76,7 +73,6 @@ export class NotesComponent {
     };
     this.notes.push(draft);
     this.selectedNote = draft;
-    console.log(this.notes);
   }
 
   updateTemplate() {}
