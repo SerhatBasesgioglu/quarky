@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Linux",
+    "description": "An open-source operating system kernel widely used in servers, desktops, and embedded systems."
+  },
+  {
+    "name": "PostgreSQL",
+    "description": "A powerful open-source relational database system known for reliability and extensibility."
+  },
+  {
+    "name": "Docker",
+    "description": "A platform to develop, ship, and run applications inside lightweight containers."
+  },
+  {
+    "name": "Kubernetes",
+    "description": "An orchestration system for automating deployment, scaling, and management of containerized applications."
+  },
+  {
+    "name": "Nginx",
+    "description": "A high-performance web server and reverse proxy used for load balancing and caching."
+  },
+  {
+    "name": "Git",
+    "description": "A distributed version control system for tracking changes in source code."
+  },
+  {
+    "name": "Angular",
+    "description": "A TypeScript-based web application framework maintained by Google."
+  },
+  {
+    "name": "ASP.NET Core",
+    "description": "A cross-platform framework for building modern cloud-based web applications with .NET."
+  },
+  {
+    "name": "Redis",
+    "description": "An in-memory key-value store often used for caching and real-time analytics."
+  },
+  {
+    "name": "ElasticSearch",
+    "description": "A distributed search and analytics engine commonly used for log and text analysis."
+  },
+  {
+    "name": "Prometheus",
+    "description": "An open-source monitoring and alerting toolkit optimized for time-series data."
+  },
+  {
+    "name": "Grafana",
+    "description": "An observability platform for visualizing metrics, logs, and traces."
+  },
+  {
+    "name": "Terraform",
+    "description": "An infrastructure as code tool for provisioning and managing cloud resources declaratively."
+  },
+  {
+    "name": "Ansible",
+    "description": "An automation tool for configuration management, application deployment, and orchestration."
+  },
+  {
+    "name": "OpenWrt",
+    "description": "A Linux-based open-source firmware for embedded devices, especially routers."
+  },
+  {
+    "name": "Debian",
+    "description": "A stable and community-driven Linux distribution that serves as the base for many others."
+  },
+  {
+    "name": "Ubuntu",
+    "description": "A Linux distribution based on Debian, popular for desktops, servers, and cloud deployments."
+  },
+  {
+    "name": "CentOS Stream",
+    "description": "A Linux distribution that sits between Fedora and Red Hat Enterprise Linux, serving as a rolling preview."
+  },
+  {
+    "name": "Podman",
+    "description": "A daemonless container engine that is compatible with Docker CLI."
+  },
+  {
+    "name": "Vault",
+    "description": "A tool for securely storing and controlling access to secrets and sensitive data."
+  },
+  {
+    "name": "CI/CD",
+    "description": "A set of practices for continuous integration and continuous delivery of software."
+  },
+  {
+    "name": "Agile",
+    "description": "A methodology emphasizing iterative development, collaboration, and flexibility."
+  },
+  {
+    "name": "Scrum",
+    "description": "An agile framework for managing work with defined roles, events, and artifacts."
+  },
+  {
+    "name": "Kanban",
+    "description": "A workflow visualization method that uses boards to optimize throughput."
+  },
+  {
+    "name": "Microservices",
+    "description": "An architectural style where applications are composed of loosely coupled services."
+  },
+  {
+    "name": "Monolith",
+    "description": "An application design where all functionality is bundled into a single codebase."
+  },
+  {
+    "name": "Load Balancer",
+    "description": "A system that distributes network or application traffic across multiple servers."
+  },
+  {
+    "name": "Firewall",
+    "description": "A network security system that monitors and controls incoming and outgoing traffic."
+  },
+  {
+    "name": "DNS",
+    "description": "The Domain Name System, which resolves human-readable names into IP addresses."
+  },
+  {
+    "name": "TLS",
+    "description": "Transport Layer Security, a cryptographic protocol providing secure communication over a network."
+  }
+]
