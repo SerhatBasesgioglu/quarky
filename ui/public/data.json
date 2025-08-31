@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "name": "Linux Basics",
+    "description": "Foundational knowledge of Linux systems.",
+    "dependencies": []
+  },
+  {
+    "id": 2,
+    "name": "Shell Commands",
+    "description": "Core command-line operations.",
+    "dependencies": [{ "id": 1, "level": 2 }]
+  },
+  {
+    "id": 3,
+    "name": "File Permissions",
+    "description": "Managing user and group access rights.",
+    "dependencies": [
+      { "id": 1, "level": 3 },
+      { "id": 2, "level": 3 }
+    ]
+  },
+  {
+    "id": 4,
+    "name": "User Management",
+    "description": "Adding, removing, and configuring system users.",
+    "dependencies": [
+      { "id": 2, "level": 4 },
+      { "id": 3, "level": 4 }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Package Management",
+    "description": "Installing and managing software packages.",
+    "dependencies": [{ "id": 1, "level": 3 }]
+  },
+  {
+    "id": 6,
+    "name": "Networking Basics",
+    "description": "Understanding IP, DNS, and routing.",
+    "dependencies": [{ "id": 1, "level": 4 }]
+  },
+  {
+    "id": 7,
+    "name": "SSH & Remote Access",
+    "description": "Secure remote system management.",
+    "dependencies": [
+      { "id": 5, "level": 5 },
+      { "id": 6, "level": 5 }
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Firewall Configuration",
+    "description": "Securing servers with firewall rules.",
+    "dependencies": [
+      { "id": 6, "level": 6 },
+      { "id": 7, "level": 7 }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Process Management",
+    "description": "Controlling and monitoring system processes.",
+    "dependencies": [
+      { "id": 1, "level": 4 },
+      { "id": 5, "level": 5 }
+    ]
+  },
+  {
+    "id": 10,
+    "name": "System Monitoring",
+    "description": "Observing resource usage and performance.",
+    "dependencies": [
+      { "id": 9, "level": 6 },
+      { "id": 8, "level": 7 }
+    ]
+  }
+]

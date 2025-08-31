@@ -5,5 +5,5 @@ import { ConceptsComponent } from './features/concepts/concepts.component';
 export const routes: Routes = [
   { path: 'notes', component: NotesComponent },
   { path: 'concepts', component: ConceptsComponent },
-  { path: '**', redirectTo: 'notes', pathMatch: 'full' },
+  { path: '**', redirectTo: 'concepts', pathMatch: 'full' },
 ];

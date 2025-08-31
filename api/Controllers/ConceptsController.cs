@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace Quarky.Controllers;
@@ -85,7 +83,7 @@ public class ConceptsController : ControllerBase
 
         var dependency = await _context.Concepts.FindAsync(dependencyId);
 
-        if(concept == null || dependency == null) return NotFound();
+        if (concept == null || dependency == null) return NotFound();
         if (!concept.Dependencies.Contains(dependency))
         {
             concept.Dependencies.Add(dependency);

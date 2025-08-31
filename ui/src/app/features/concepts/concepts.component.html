@@ -1,0 +1,17 @@
+<h2>Concepts</h2>
+<br />
+<ul>
+  @for (concept of concepts; track concept.id) {
+    <li>
+      <p>{{ concept.name }}</p>
+      <p>{{ concept.description }}</p>
+      <p>Dependencies</p>
+      @for (dep of concept.dependencies; track dep.id) {
+        <p>{{ findConceptName(dep.id) }} at level {{ dep.level }}</p>
+      }
+      <br />
+    </li>
+  }
+</ul>
+
+<div #network class="h-screen w-screen"></div>
